@@ -1,0 +1,17 @@
+html{
+  scroll-behavior: smooth;
+}
+#root {
+  max-width: 100vw;
+  max-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("./assets/bg.jpg");
+  font-family: Red Rose;
+  background-position: center;
+  background-attachment: fixed;
+}
