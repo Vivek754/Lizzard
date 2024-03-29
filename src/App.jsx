@@ -4,14 +4,9 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import FirstBlock from "./components/FirstBlock";
 import SecondBlock from "./components/SecondBlock";
+import ThirdBloack from "./components/ThirdBlock";
 
 function App() {
-  window.addEventListener("mousedown", (e) => {
-    const x = e.offsetX;
-    const y = e.offsetY;
-
-    console.log("x:"+ x + " Y:"+ y);
-  });
   return (
     <>
       <Navbar logo={"./src/assets/bw logo.png"} />
@@ -23,6 +18,7 @@ function App() {
         image={"./src/assets/bmw m2.png"}
       />
       <SecondBlock />
+      <ThirdBloack />
     </>
   );
 }

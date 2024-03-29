@@ -2,13 +2,13 @@ import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 
 function SecondBlock() {
   const { scrollYProgress } = useScroll();
-  const pathLength = useTransform(scrollYProgress, [0, 1], [0, 1]);
+  const pathLength = useTransform(scrollYProgress, [0, 1], [0, 3]);
   useSpring(pathLength, { stiffness: 100, damping: 20 });
 
 
   return (
     <>
-      <div className="grid grid-cols-1 place-items-center">
+      <div className="grid grid-cols-1 mb-40 place-items-center">
         <div className="absolute z-10">
           <motion.svg
             height="95vh"
@@ -53,16 +53,16 @@ function SecondBlock() {
               cx="250"
               cy="150"
               r="6"
-              fill="white"
-              stroke="black"
+              fill="black"
+              stroke="white"
               strokeWidth="2"
             />
             <circle
               cx="550"
               cy="240"
               r="6"
-              fill="white"
-              stroke="black"
+              fill="black"
+              stroke="white"
               strokeWidth="2"
             />
 
@@ -106,16 +106,16 @@ function SecondBlock() {
               cx="1220"
               cy="150"
               r="6"
-              fill="white"
-              stroke="black"
+              fill="black"
+              stroke="white"
               strokeWidth="2"
             />
             <circle
               cx="920"
               cy="240"
               r="6"
-              fill="white"
-              stroke="black"
+              fill="black"
+              stroke="white"
               strokeWidth="2"
             />
 
@@ -159,16 +159,16 @@ function SecondBlock() {
               cx="550"
               cy="450"
               r="6"
-              fill="white"
-              stroke="black"
+              fill="black"
+              stroke="white"
               strokeWidth="2"
             />
             <circle
               cx="250"
               cy="550"
               r="6"
-              fill="white"
-              stroke="black"
+              fill="black"
+              stroke="white"
               strokeWidth="2"
             />
 
@@ -212,16 +212,16 @@ function SecondBlock() {
               cx="920"
               cy="450"
               r="6"
-              fill="white"
-              stroke="black"
+              fill="black"
+              stroke="white"
               strokeWidth="2"
             />
             <circle
               cx="1240"
               cy="540"
               r="6"
-              fill="white"
-              stroke="black"
+              fill="black"
+              stroke="white"
               strokeWidth="2"
             />
           </motion.svg>

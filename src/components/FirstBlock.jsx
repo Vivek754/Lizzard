@@ -1,6 +1,6 @@
 function FirstBlock({ firstLine, secondLine,brandName , mainLine, image }) {
   return (
-    <div className="my-52 flex justify-evenly items-center">
+    <div className="my-40 flex justify-evenly items-center">
       <div className="" style={{ textShadow: "0px 0px 10px #000000" }}>
         <h1 className="text-3xl text-white" style={{ fontWeight: "200" }}>
           {firstLine}
