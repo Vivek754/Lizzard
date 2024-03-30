@@ -1,8 +1,8 @@
 function ThirdBloack() {
   return (
     <>
-      <div className="flex flex-col items-center py-10 rounded-lg">
-      <h1 className="text-7xl py-8 text-white">Diversity of Designs</h1>
+      <div className="flex flex-col items-center py-10  rounded-lg">
+      <h1 className="text-7xl py-8 text-white">Broad Range of Designs</h1>
         <div className="grid w-full place-items-center">
           <div className="grid grid-cols-3 gap-4 w-[50rem] place-items-cente p-5 rounded-lg">
             <div className="h-[250px] bg-white bg-opacity-40 backdrop-blur-md p-5 rounded-xl">

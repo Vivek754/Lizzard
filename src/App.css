@@ -1,14 +1,15 @@
 html{
   scroll-behavior: smooth;
+  
 }
 #root {
   max-width: 100vw;
   max-height: 100vh;
-  margin: 0;
+  
   padding: 0 3rem;
 }
 body {
-  margin: 0;
+ 
   padding: 0;
   background-image: url("./assets/bg1.jpg");
   font-family: Red Rose;

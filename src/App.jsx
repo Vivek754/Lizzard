@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import FirstBlock from "./components/FirstBlock";
 import SecondBlock from "./components/SecondBlock";
 import ThirdBloack from "./components/ThirdBlock";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       />
       <SecondBlock />
       <ThirdBloack />
+      <Footer />
     </>
   );
 }
