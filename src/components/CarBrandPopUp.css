@@ -29,28 +29,28 @@
   width: full;
   height: full;
 }
-.brandContainer{
-    padding:10px 0px;
+.brandContainer {
+  padding: 10px 0px;
 }
-.brandContainer:hover{
-    cursor:pointer;
-    background:rgb(255, 255, 255, 0.4);
-    backdrop-filter:blur(50px);
-    -webkit-backdrop-filter: blur(50px);
+.brandContainer:hover {
+  cursor: pointer;
+  background: rgb(255, 255, 255, 0.4);
+  backdrop-filter: blur(50px);
+  -webkit-backdrop-filter: blur(50px);
 }
 
 @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform:sclae(0);
-    }
-    to {
-      opacity: 1;
-      transform:sclae(1);
-    }
+  from {
+    opacity: 0;
+    transform: sclae(0);
   }
-  
-  .mainContainer {
-    animation: fadeIn 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),zoomIn 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+  to {
+    opacity: 1;
+    transform: sclae(1);
   }
- 
+}
+
+.mainContainer {
+  animation: fadeIn 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
+    zoomIn 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
