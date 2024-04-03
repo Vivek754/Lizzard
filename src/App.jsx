@@ -6,12 +6,13 @@ import FirstBlock from "./components/FirstBlock";
 import SecondBlock from "./components/SecondBlock";
 import ThirdBloack from "./components/ThirdBlock";
 import Footer from "./components/Footer";
+import Shop from "./components/Shop";
 
 function App() {
   return (
     <>
       <Navbar logo={"./src/assets/bw logo.png"} />
-      <FirstBlock
+      {/* <FirstBlock
         firstLine={"FOR CAR LOVERS"}
         secondLine={"BY CAR LOVER"}
         brandName={"LIZZARD"}
@@ -20,7 +21,8 @@ function App() {
       />
       <SecondBlock />
       <ThirdBloack />
-      <Footer />
+      <Footer /> */}
+      <Shop />
     </>
   );
 }

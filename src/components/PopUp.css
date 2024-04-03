@@ -1,0 +1,56 @@
+.popContainer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+}
+.mainContainer {
+  color: black;
+  width: 800px;
+  height: 500px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+}
+.brands {
+  padding: 10px 5px;
+  width: 150px;
+  height: 100px;
+  display: flex;
+  place-items: center;
+}
+.brandImage {
+  object-fit: contain;
+  width: full;
+  height: full;
+}
+.brandContainer{
+    padding:10px 0px;
+}
+.brandContainer:hover{
+    cursor:pointer;
+    background:rgb(255, 255, 255, 0.4);
+    backdrop-filter:blur(50px);
+    -webkit-backdrop-filter: blur(50px);
+}
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform:sclae(0);
+    }
+    to {
+      opacity: 1;
+      transform:sclae(1);
+    }
+  }
+  
+  .mainContainer {
+    animation: fadeIn 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),zoomIn 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+ 

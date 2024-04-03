@@ -4,7 +4,7 @@ function Footer() {
     
   return (
     <>
-      <footer className="flex flex-col w-full justify-center items-center border-white border-2 mb-5">
+      <footer className="flex flex-col w-full justify-center items-center border-white border-2">
         <div className="flex justify-evenly w-full items-center bg-white bg-opacity-70 backdrop-blur-md  border-b py-4 px-[30rem] border-white">
           <div className="w-[40px] mx-5 hover:brightness-125 cursor-pointer">
             <img src="src/assets/fb2.png" alt="" />
@@ -41,7 +41,7 @@ function Footer() {
               <h1 className="text-2xl mb-5">Subscribe</h1>
               <form>
                 <input type="email" className="text-lg px-2 py-2 mr-3 outline-none ring-2 text-center" />
-                <button className="px-4 py-2 ring-2  bg-white text-lg">Subscribe</button>
+                <button className="px-4 py-2 ring-2 bg-white text-lg">Subscribe</button>
               </form>
             </div>
           </div>
