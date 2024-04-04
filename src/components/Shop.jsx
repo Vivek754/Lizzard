@@ -42,7 +42,7 @@ function Shop() {
   // Pop Up for Car Covers Ends here
   return (
     <>
-      <div className="text-white flex flex-col items-center bg-white/30 py-5 backdrop-blur-md">
+      <div className="text-white flex flex-col min-h-96 items-center bg-white/30 py-5 backdrop-blur-md">
         <span className="text-5xl mb-10">SHOP FOR YOUR CAR</span>
         <main className="grid grid-cols-3 w-full">
           <div className="flex flex-col items-center">
@@ -87,6 +87,9 @@ function Shop() {
             </div>
           </div>
         </main>
+        <div className=" bg-white">
+        <button className=" bg-black py-3 px-10 outline outline-2 hover:outline-offset-4 text-xl duration-200 ease-in-out">Check Out</button>
+        </div>
       </div>
       {showBrandCarPopUp && <CarBrandPopUp onImageSelect={handleImageSrc} />}
       {showCarPopUp && <CarPopUp onImageSelect={handleCarImageSrc} />}

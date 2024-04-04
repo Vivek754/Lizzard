@@ -17,7 +17,7 @@ function CarCoverPopUp({ onImageSelect }) {
   return (
     <>
       <div
-        className="popContainer bg-white/10 backdrop-blur-lg duration-200"
+        className="popContainer bg-white/10 backdrop-blur-lg duration-200 z-30"
         onClick={closePopUp}
       >
         <div
