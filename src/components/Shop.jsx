@@ -1,8 +1,8 @@
 import React from "react";
 import { useState } from "react";
-import CarBrandPopUp from "./CarBrandPopUp";
-import CarPopUp from "./CarPopUp";
-import CarCoverPopUp from "./CarCoverPopUp";
+import CarBrandPopUp from "./PopUp/CarBrandPopUp";
+import CarPopUp from "./PopUp/CarPopUp"
+import CarCoverPopUp from "./PopUp/CarCoverPopUp"
 function Shop() {
   // Pop Up for Cars Brands Starts here
   const [showBrandCarPopUp, setshowBrandCarPopUp] = useState(false);

@@ -4,7 +4,7 @@ function Footer() {
     
   return (
     <>
-      <footer className="flex flex-col w-full justify-center items-center border-white border-2">
+      <footer className="flex flex-col w-full justify-center items-center border-white border-2 mt-10">
         <div className="flex justify-evenly w-full items-center bg-white bg-opacity-70 backdrop-blur-md  border-b py-4 px-[30rem] border-white">
           <div className="w-[40px] mx-5 hover:brightness-125 cursor-pointer">
             <img src="src/assets/fb2.png" alt="" />
