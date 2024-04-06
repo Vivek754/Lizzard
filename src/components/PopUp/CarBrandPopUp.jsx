@@ -1,16 +1,46 @@
-import { useState } from "react";
+import { useState, useCallback, memo } from "react";
 import "./CarBrandPopUp.css";
-function CarBrandPopUp({ onImageSelect }) {
+
+const brands = [
+  {
+    brandImage: "src/assets/brands/tata.png",
+    brandName: "TATA",
+  },
+  {
+    brandImage: "src/assets/brands/mahindra.png",
+    brandName: "MAHINDRA",
+  },
+  {
+    brandImage: "src/assets/brands/kia.png",
+    brandName: "KIA",
+  },
+  {
+    brandImage: "src/assets/brands/ms.png",
+    brandName: "MARUTI_SUZUKI",
+  },
+];
+
+function CarBrandPopUp({ onImageSelect, onBrandSelect }) {
   const [isOpen, setIsOpen] = useState(true);
 
-  const closePopUp = () => {
+  const closePopUp = useCallback(() => {
     setIsOpen(false);
-  };
+  }, []);
 
-  const handleImageClick = (src) => {
-    closePopUp();
-    onImageSelect(src);
-  };
+  const handleImageClick = useCallback(
+    (src) => {
+      closePopUp();
+      onImageSelect(src);
+    },
+    [closePopUp, onImageSelect]
+  );
+
+  const handleBrandSelect = useCallback(
+    (brand) => {
+      onBrandSelect(brand);
+    },
+    [onBrandSelect]
+  );
 
   if (!isOpen) return null;
 
@@ -29,74 +59,29 @@ function CarBrandPopUp({ onImageSelect }) {
           </h1>
           <div className="flex flex-col w-full">
             <div className="grid grid-cols-1 place-items-center">
-              <div className="grid grid-cols-2 place-items-center w-full brandContainer">
-                <div className="brands">
-                  <img
-                    src="src/assets/brands/ms.png"
-                    className="brandImage"
-                    alt=""
-                    onClick={(e) => handleImageClick(e.target.src)}
-                  />
-                </div>
-                <div className="flex items-center">
-                  <h1>MARUTI SUZUKI</h1>
-                </div>
-              </div>
-              <div className="grid grid-cols-2 place-items-center w-full brandContainer">
-                <div
-                  className="brands"
-                  onClick={(e) => handleImageClick(e.target.src)}
-                >
-                  <img
-                    src="src/assets/brands/mahindra.png"
-                    className="brandImage"
-                    alt=""
-                    onClick={(e) => handleImageClick(e.target.src)}
-                  />
-                </div>
-                <div className="flex items-center">
-                  <h1>MAHINDRA</h1>
-                </div>
-              </div>
-              <div className="grid grid-cols-2 place-items-center w-full brandContainer">
-                <div className="brands">
-                  <img
-                    src="src/assets/brands/tata.png"
-                    className="brandImage"
-                    alt=""
-                    onClick={(e) => handleImageClick(e.target.src)}
-                  />
-                </div>
-                <div className="flex items-center">
-                  <h1>TATA</h1>
-                </div>
-              </div>
-              <div className="grid grid-cols-2 place-items-center w-full brandContainer">
-                <div className="brands">
-                  <img
-                    src="src/assets/brands/kia.png"
-                    className="brandImage"
-                    alt=""
-                    onClick={(e) => handleImageClick(e.target.src)}
-                  />
-                </div>
-                <div className="flex items-center">
-                  <h1>KIA</h1>
-                </div>
-              </div>
-              <div className="grid grid-cols-2 place-items-center w-full brandContainer">
-                <div className="brands">
-                  <img
-                    src="src/assets/brands/kia.png"
-                    className="brandImage"
-                    alt=""
-                    onClick={(e) => handleImageClick(e.target.src)}
-                  />
-                </div>
-                <div className="flex items-center">
-                  <h1>KIA</h1>
-                </div>
-              </div>
+              {brands.map((brand) => {
+                return (
+                  <div
+                    onClick={() => {
+                      handleBrandSelect(brand.brandName);
+                      handleImageClick(brand.brandImage);
+                    }}
+                    className="grid grid-cols-2 place-items-center w-full brandContainer"
+                    key={brand.brandName}
+                  >
+                    <div className="brands">
+                      <img
+                        src={brand.brandImage}
+                        className="brandImage"
+                        alt="Car Image"
+                      />
+                    </div>
+                    <div className="flex items-center">
+                      <h1>{brand.brandName}</h1>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
@@ -104,4 +89,5 @@ function CarBrandPopUp({ onImageSelect }) {
     </>
   );
 }
-export default CarBrandPopUp;
+
+export default memo(CarBrandPopUp);

@@ -13,6 +13,12 @@ function Shop() {
   const handleImageSrc = (src) => {
     setBrandImageSrc(src);
   };
+
+  const [brandName, setBrandName] = useState(null);
+  const handleBrandName = (brand)=>{
+    setBrandName(brand);
+    
+  }
   // Pop Up for Cars Brands Ends here
 
   // Pop Up for Cars Starts here
@@ -91,8 +97,8 @@ function Shop() {
         <button className=" bg-black py-3 px-10 outline outline-2 hover:outline-offset-4 text-xl duration-200 ease-in-out">Check Out</button>
         </div>
       </div>
-      {showBrandCarPopUp && <CarBrandPopUp onImageSelect={handleImageSrc} />}
-      {showCarPopUp && <CarPopUp onImageSelect={handleCarImageSrc} />}
+      {showBrandCarPopUp && <CarBrandPopUp onImageSelect={handleImageSrc} onBrandSelect={handleBrandName} />}
+      {showCarPopUp && <CarPopUp onImageSelect={handleCarImageSrc} brandName={brandName} />}
       {showCarCoverPopUp && <CarCoverPopUp onImageSelect={handleCarCoverImageSrc} />}
     </>
   );

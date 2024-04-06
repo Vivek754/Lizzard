@@ -1,18 +1,39 @@
-import { useState } from "react";
+import { useState, useCallback, memo } from "react";
 import "./CarBrandPopUp.css";
+
+const cover = [
+  {
+    coverImage: "src/assets/covers/green.jpg",
+    coverName: "GREEN",
+  },
+  {
+    coverImage: "src/assets/covers/white.jpg",
+    coverName: "WHITE",
+  },
+  {
+    coverImage: "src/assets/covers/beige.jpg",
+    coverName: "BEIGE",
+  },
+  {
+    coverImage: "src/assets/covers/brown.jpg",
+    coverName: "BROWN",
+  },
+];
+
 function CarCoverPopUp({ onImageSelect }) {
   const [isOpen, setIsOpen] = useState(true);
 
-  const closePopUp = () => {
+  const closePopUp = useCallback(() => {
     setIsOpen(false);
-  };
+  }, []);
 
-  const handleImageClick = (src) => {
+  const handleImageClick = useCallback((src) => {
     closePopUp();
     onImageSelect(src);
-  };
+  }, [closePopUp, onImageSelect]);
 
   if (!isOpen) return null;
+
 
   return (
     <>
@@ -29,58 +50,27 @@ function CarCoverPopUp({ onImageSelect }) {
           </h1>
           <div className="flex flex-col w-full">
             <div className="grid grid-cols-1 place-items-center">
-              <div className="grid grid-cols-2 place-items-center w-full brandContainer">
-                <div className="brands overflow-hidden">
-                  <img
-                    src="src/assets/covers/green.jpg"
-                    className="brandImage"
-                    alt=""
-                    onClick={(e) => handleImageClick(e.target.src)}
-                  />
-                </div>
-                <div className="flex items-center">
-                  <h1>GREEN</h1>
-                </div>
-              </div>
-              <div className="grid grid-cols-2 place-items-center w-full brandContainer">
-                <div className="brands overflow-hidden">
-                  <img
-                    src="src/assets/covers/white.jpg"
-                    className="brandImage"
-                    alt=""
-                    onClick={(e) => handleImageClick(e.target.src)}
-                  />
-                </div>
-                <div className="flex items-center">
-                  <h1>WHITE</h1>
-                </div>
-              </div>
-              <div className="grid grid-cols-2 place-items-center w-full brandContainer">
-                <div className="brands overflow-hidden">
-                  <img
-                    src="src/assets/covers/brown.jpg"
-                    className="brandImage"
-                    alt=""
-                    onClick={(e) => handleImageClick(e.target.src)}
-                  />
-                </div>
-                <div className="flex items-center">
-                  <h1>Brown</h1>
-                </div>
-              </div>
-              <div className="grid grid-cols-2 place-items-center w-full brandContainer">
-                <div className="brands overflow-hidden">
-                  <img
-                    src="src/assets/covers/beige.jpg"
-                    className="brandImage"
-                    alt=""
-                    onClick={(e) => handleImageClick(e.target.src)}
-                  />
-                </div>
-                <div className="flex items-center">
-                  <h1>BEIGE</h1>
-                </div>
-              </div>
+              {cover.map((cover) => {
+                return (
+                  <div
+                    className="grid grid-cols-2 place-items-center w-full brandContainer"
+                    onClick={() => {
+                      handleImageClick(cover.coverImage);
+                    }}
+                  >
+                    <div className="brands overflow-hidden">
+                      <img
+                        src={cover.coverImage}
+                        className="brandImage"
+                        alt=""
+                      />
+                    </div>
+                    <div className="flex items-center">
+                      <h1>{cover.coverName}</h1>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
@@ -88,4 +78,4 @@ function CarCoverPopUp({ onImageSelect }) {
     </>
   );
 }
-export default CarCoverPopUp;
+export default memo(CarCoverPopUp);
